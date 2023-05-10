@@ -1,0 +1,45 @@
+from com.wsproxy.util import ScriptUtil
+from com.wsproxy.anomalydetection import DetectedAnomaly
+from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from com.wsproxy.tester import RawWebsocketFrame
+from java.util import ArrayList
+
+def getName():
+    return "Websocket-Protocol: Fuzz frame (light - 10%)"
+    
+def getActiveRuleType():
+    return "FUZZ-FRAME"
+
+def getDescription():
+    return "Run zzuf on the entire frame"
+
+def getCategory():
+    return "Fuzz"
+    
+def getFrameScope():
+  return ["TEXT","PING","PONG","CLOSE","BINARY","CONTINUATION"]
+
+def getTestScope():
+  return "PRESENTATION-WS"
+
+def getMutations( frame ):
+  frames = []
+  return frames;
+
+def getPayloadMutationBySeed( payload, seed, ratio ):
+    output = ScriptUtil.runCommand(["sh","-c","echo -n {}| xxd -r -p | zzuf -s {} -r {} | xxd -p | tr -d '\n'".format(payload,str(seed),str(ratio))])
+    print("{}@{} in:\n{}\nout:\n{}".format(seed,ratio,payload,output))
+    return output
+
+def analyze( websocket_messages ):
+    anomalies = ArrayList()
+    return anomalies
+    
+def getFuzzRange():
+    return 1000
+
+def getFuzzRatio():
+    return 0.1
+
+def selfTest():
+    return True

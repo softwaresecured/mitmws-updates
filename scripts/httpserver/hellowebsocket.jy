@@ -1,0 +1,146 @@
+from com.wsproxy.httpserver import CustomHttpResponse
+from com.wsproxy.httpserver import CustomWebsocketFrame
+def getPath():
+    return "hellowebsocket"
+def onHttpRequest( method, path, requestHeaders, body ):
+    html = """
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>WsProxy Test Page</title>
+    </head>
+    <body>
+        <style>
+            body {
+                background-color: grey;
+            }
+            textarea {
+                width: 100%;
+            }
+            .main {
+                margin: auto;
+                width: 80%;
+            }
+        </style>
+        <div class="main">
+            <center><h1>WsProxy Echo Server</h1></center>
+            <div>
+            <p>Send a message to the server:</p>
+            <p><textarea rows="10" id="msgContent"></textarea>
+            </div>
+            <p>
+                <button onclick="sendMsg()">Send</button>
+                <button onclick="sendSample()">SAMPLE</button>
+                <button onclick="sendXML()">XML</button>
+                <button onclick="sendJSON()">JSON (text frame)</button>
+                <button onclick="sendJSONBinary()">JSON (binary frame)</button>
+                <button onclick="sendKVP()">KVP</button>
+                <button onclick="sendKVPE()">KVPE</button>
+                <button onclick="sendBinary()">BINARY</button>
+                <button onclick="sendBurst(10)">Burst 10</button>
+                <button onclick="sendBurst(100)">Burst 100</button>
+            </p>
+            <ul id="conversationHistory">
+            </ul>
+        </div>
+    </body>
+    <script>
+        function addMessage( message, direction ) {
+            var newItem = document.createElement("li");
+            newItem.innerText = direction + " - " + new Date().toISOString() + " - " + message;
+            var history = document.getElementById("conversationHistory");
+            history.prepend(newItem);
+        }
+        const ws = new WebSocket("ws://localhost:7878/custom/hellowebsocket");
+        ws.onmessage = function(e) {
+            addMessage(e.data,"<<");
+        };
+        
+        function sendWsMessage( msg ) {
+            ws.send(msg);
+            addMessage(msg,">>");
+        }
+        
+        function sendMsg() {
+            var msgContent = document.getElementById("msgContent");
+            sendWsMessage(msgContent.value);
+        }
+        
+        function sendBinary() {
+            var msg = new TextEncoder().encode("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+            ws.send(msg);
+            addMessage(msg,">>");
+        }
+        
+        function sendSample() {
+            sendWsMessage("This is a test message");
+        }
+        
+        function sendBurst(amount) {
+            for ( var i = 0; i < amount; i++ ) {
+                sendWsMessage("BURST MESSAGE " + i + "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789");
+            }
+        }
+        
+        function sendXML() {
+            sendWsMessage(`<employees>
+  <employee>
+    <firstName>John</firstName> <lastName>Doe</lastName>
+  </employee>
+  <employee>
+    <firstName>Anna</firstName> <lastName>Smith</lastName>
+  </employee>
+  <employee>
+    <firstName>Peter</firstName> <lastName>Jones</lastName>
+  </employee>
+</employees>`);
+        }
+        
+        function sendJSON() {
+            sendWsMessage(`{"employees":[
+  { "firstName":"John", "lastName":"Doe" },
+  { "firstName":"Anna", "lastName":"Smith" },
+  { "firstName":"Peter", "lastName":"Jones" }
+]}`);
+        }
+        
+        function sendJSONBinary() {
+            var msg = new TextEncoder().encode(`{"employees":[
+  { "firstName":"John", "lastName":"Doe" },
+  { "firstName":"Anna", "lastName":"Smith" },
+  { "firstName":"Peter", "lastName":"Jones" }
+]}`);
+            ws.send(msg);
+            addMessage(msg,">>");
+        }
+        
+        function sendKVP() {
+            sendWsMessage("https://test.blah.com/api?q=test&param1=aaa&param2=bbb&param3=ccc");
+        }
+        
+        function sendKVPE() {
+            sendWsMessage("https%3A%2F%2Ftest.blah.com%2Fapi%3Fq%3Dtest%26param1%3Daaa%26param2%3Dbbb%26param3%3Dccce");
+        }
+        
+        
+    </script>
+</html>
+"""
+    response = CustomHttpResponse(200, "OK", html, "text/html");
+    response.addHeader("Blah: blahblah");
+    return response
+
+def onWebsocketConnect():
+    response_frames = [
+        CustomWebsocketFrame(1, 0,0,0,"TEXT", bytes("Welcome to the echo test server".encode("utf-8"))),
+    ]
+    return response_frames
+    
+def onWebsocketMessage( message ):
+    response_frames = []
+    try:
+        if message.getOpcode() == "TEXT":
+            response_frames.append(CustomWebsocketFrame(1, 0,0,0,"TEXT", bytes(message.getPayloadAsString().encode("utf-8"))))
+    except Exception as e:
+        print(e)
+    return response_frames

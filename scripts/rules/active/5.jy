@@ -1,0 +1,39 @@
+from com.wsproxy.anomalydetection import DetectedAnomaly
+from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from java.util import ArrayList
+
+def getName():
+    return "Remote file include tests"
+
+def getActiveRuleType():
+    return "PAYLOAD"
+    
+def getDescription():
+    return "Remote file include ( http )"
+    
+def getCategory():
+    return "Remote file include"
+
+def getPayloads():
+    return ['http://example.com','https://example.com']
+
+def getFrameScope():
+  return ["TEXT","PING","PONG"]
+
+def getTestScope():
+  return "APPLICATION"
+
+def analyze( conversations ):
+    anomalies = ArrayList()
+    for conversation in conversations:
+      for websocket_message in conversation:
+              # in this case, we just check for the presence of the string "debugtest" as a POC
+              if bool(websocket_message.getFrame().payloadMatchesRegex("(?i).*<h1>example domain</h1>.*")):
+                  anomaly = DetectedAnomaly(1005, "HIGH", "Regex match", "CWE-98", "Remote file include", "Improper Control of Filename for Include/Require Statement")
+                  anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
+                  anomaly.setConversationUuid(websocket_message.getFrame().getConversationUUID())
+                  anomalies.add(anomaly)
+    return anomalies
+
+def selfTest():
+    return True

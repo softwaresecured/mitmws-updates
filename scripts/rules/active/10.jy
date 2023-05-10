@@ -1,0 +1,38 @@
+from com.wsproxy.anomalydetection import DetectedAnomaly
+from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from com.wsproxy.tester import RawWebsocketFrame
+from java.util import ArrayList
+
+def getName():
+    return "Websocket-Protocol: Frame creator"
+    
+def getActiveRuleType():
+    return "FRAME-CREATOR"
+
+def getDescription():
+    return "Creates frames with various configurations"
+
+def getCategory():
+    return "Fuzz"
+    
+def getFrameScope():
+  return ["TEXT","PING","PONG","CLOSE","BINARY","CONTINUATION"]
+
+def getTestScope():
+  return "PRESENTATION-WS"
+
+def getMutations( frame ):
+  frames = []
+  # do nothing just testing
+  frames.append(RawWebsocketFrame(frame.getFin(), frame.getRsv1(), frame.getRsv2(), frame.getRsv3(), frame.getMasked(), frame.getOpcodeInt(), frame.getPayloadLength(), frame.getMaskKey(), frame.getPayload()))
+  return frames;
+
+def getPayloadMutationBySeed( payload, seed, ratio ):
+    return payload
+    
+def analyze( websocket_messages ):
+    anomalies = ArrayList()
+    return anomalies
+
+def selfTest():
+    return True

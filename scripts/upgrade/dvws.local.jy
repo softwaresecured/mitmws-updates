@@ -1,0 +1,7 @@
+# OWASP Damn Vulnerable Web Sockets (DVWS)
+# https://github.com/interference-security/DVWS
+def execute():
+    sample_http_request = """GET http://dvws.local:8080/file-inclusion HTTP/1.1\r\nHost: dvws.local:8080\r\nSec-WebSocket-Version: 13\r\nSec-WebSocket-Key: __SEC_WEBSOCKET_KEY__\r\nConnection: keep-alive, Upgrade\r\nHeyMorty: Look I've turned myself into a HTTP request\r\nUpgrade: websocket\r\n\r\n"""
+    return sample_http_request
+def selfTest():
+    return True

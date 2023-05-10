@@ -1,0 +1,43 @@
+from com.wsproxy.mvc.model import InteractShTestPayload
+from com.wsproxy.anomalydetection import DetectedAnomaly
+from java.util import ArrayList
+
+def getName():
+    return "Interactsh urls for http, ftp, smtp"
+    
+def getActiveRuleType():
+    return "PAYLOAD-INTERACTSH"
+
+def getDescription():
+    return "If an interactsh server is available SSRF tests will be generated using a trackable id"
+
+def getCategory():
+    return "SSRF"
+    
+def getFrameScope():
+  return ["TEXT","PING","PONG","CLOSE","BINARY","CONTINUATION"]
+
+def getTestScope():
+  return "PRESENTATION-WS"
+
+def getOOBPayloads( interactsh ):
+    payloads = []
+    payload = interactsh.getPayload();
+    payloads.append(InteractShTestPayload("http://{}".format(payload),payload))
+    
+    payload = interactsh.getPayload();
+    payloads.append(InteractShTestPayload("https://{}".format(payload),payload))
+    
+    payload = interactsh.getPayload();
+    payloads.append(InteractShTestPayload("ftp://{}".format(payload),payload))
+    
+    payload = interactsh.getPayload();
+    payloads.append(InteractShTestPayload("smtp://{}".format(payload),payload))
+    return payloads
+  
+def analyze( websocket_messages ):
+    anomalies = ArrayList()
+    return anomalies
+
+def selfTest():
+    return True

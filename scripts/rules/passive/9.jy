@@ -1,0 +1,33 @@
+from com.wsproxy.anomalydetection import DetectedAnomaly
+from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from java.util import ArrayList
+
+def getName():
+    return "Amazon S3 bucket detected"
+
+def getActiveRuleType():
+    return "PAYLOAD"
+    
+def getCategory():
+    return "Infrastructure"
+
+def getDescription():
+    return "Detects amazon s3 urls"
+
+def getFrameScope():
+  return ["TEXT","PING","PONG"]
+
+def getTestScope():
+  return "APPLICATION"
+
+def analyze( websocket_messages ):
+    anomalies = ArrayList()
+    for websocket_message in websocket_messages:
+        if bool(websocket_message.getFrame().payloadMatchesRegex("(?i).*([a-z0-9_-]+\.s3.*?amazonaws.com).*")):
+            anomaly = DetectedAnomaly(1009, "INFO", "Regex match", "CWE-000", "Amazon S3 bucket detected")
+            anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
+            anomalies.add(anomaly)
+    return anomalies
+
+def selfTest():
+    return True

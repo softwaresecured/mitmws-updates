@@ -1,0 +1,41 @@
+# Command injection ( linux )
+# Command injection ( linux )
+from com.wsproxy.anomalydetection import DetectedAnomaly
+from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from java.util import ArrayList
+
+def getName():
+    return "Command injection ( linux ) tests"
+
+def getActiveRuleType():
+    return "PAYLOAD"
+
+def getCategory():
+    return "Command injection"
+    
+def getDescription():
+    return "Command injection ( linux )"
+
+def getPayloads():
+    return ['`id`','|id|','$(id)']
+
+def getFrameScope():
+  return ["TEXT","PING","PONG"]
+
+def getTestScope():
+  return "APPLICATION"
+
+def analyze( conversations ):
+    anomalies = ArrayList()
+    for conversation in conversations:
+      for websocket_message in conversation:
+              # in this case, we just check for the presence of the string "debugtest" as a POC
+              if websocket_message.getFrame().payloadMatchesRegex("(?i).*uid=\d+.*"):
+                  anomaly = DetectedAnomaly(1005, "HIGH", "Regex match", "CWE-78", "Command injection ( linux )", "Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')")
+                  anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
+                  anomaly.setConversationUuid(websocket_message.getFrame().getConversationUUID())
+                  anomalies.add(anomaly)
+    return anomalies
+
+def selfTest():
+    return True

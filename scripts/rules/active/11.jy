@@ -1,0 +1,35 @@
+from com.wsproxy.util import ScriptUtil
+from com.wsproxy.anomalydetection import DetectedAnomaly
+from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from com.wsproxy.tester import RawWebsocketFrame
+from java.util import ArrayList
+
+def getName():
+    return "Zzuf target"
+    
+def getActiveRuleType():
+    return "FUZZ-PAYLOAD"
+
+def getDescription():
+    return "Runs zzuf on the target input"
+
+def getCategory():
+    return "Fuzz"
+    
+def getFrameScope():
+  return ["TEXT","PING","PONG","CLOSE","BINARY","CONTINUATION"]
+
+def getTestScope():
+  return "APPLICATION"
+
+def getPayloadMutationBySeed( payload, seed, ratio ):
+    output = ScriptUtil.runCommand(["sh","-c","echo -n {}| xxd -r -p | zzuf -s {} -r {} | xxd -p | tr -d '\n'".format(payload,str(seed),str(ratio))])
+    print("{}@{} in:\n{}\nout:\n{}".format(seed,ratio,payload,output))
+    return output
+  
+def analyze( websocket_messages ):
+    anomalies = ArrayList()
+    return anomalies
+
+def selfTest():
+    return True

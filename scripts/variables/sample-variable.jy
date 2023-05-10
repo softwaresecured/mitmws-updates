@@ -1,0 +1,9 @@
+# Example
+# An example variable script that reverses whatever is passed to the analyze function
+def execute( p ):
+    result = ""
+    if p is not None:
+        result = p[::-1]
+    return result
+def selfTest():
+    return True

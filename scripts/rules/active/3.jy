@@ -1,0 +1,36 @@
+from com.wsproxy.anomalydetection import DetectedAnomaly
+from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from java.util import ArrayList
+
+def getName():
+    return "Fuzz-simple"
+
+def getActiveRuleType():
+    return "PAYLOAD"
+
+def getDescription():
+    return "Mostly for testing binary frames, fuzzes all non printable characters"
+
+def getCategory():
+    return "Fuzz"
+    
+def getFrameScope():
+  return ["BINARY","CONTINUATION"]
+
+def getTestScope():
+  return "APPLICATION"
+
+def getPayloads():
+    payloads = []
+    for x in range(32):
+      payloads.append(chr(x)*128)
+    for x in range(128,256):
+          payloads.append(chr(x)*128)
+    return payloads
+
+def analyze( conversations ):
+    anomalies = ArrayList()
+    return anomalies
+
+def selfTest():
+    return True
