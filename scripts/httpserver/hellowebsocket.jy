@@ -115,11 +115,11 @@ def onHttpRequest( method, path, requestHeaders, body ):
         }
         
         function sendKVP() {
-            sendWsMessage("https://test.blah.com/api?q=test&param1=aaa&param2=bbb&param3=ccc");
+            sendWsMessage("https://test.example.com/api?q=test&param1=aaa&param2=bbb&param3=ccc");
         }
         
         function sendKVPE() {
-            sendWsMessage("https%3A%2F%2Ftest.blah.com%2Fapi%3Fq%3Dtest%26param1%3Daaa%26param2%3Dbbb%26param3%3Dccce");
+            sendWsMessage("https%3A%2F%2Ftest.example.com%2Fapi%3Fq%3Dtest%26param1%3Daaa%26param2%3Dbbb%26param3%3Dccce");
         }
         
         
