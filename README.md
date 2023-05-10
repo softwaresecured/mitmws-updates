@@ -7,3 +7,4 @@ and detiailed in the manifest.txt file that is periodically checked by WsProxy.
 - HTTP / Websocket endpoints
 - Websocket upgrade HTTP request
 - DAST rules ( passive / active )
+- Payloads
