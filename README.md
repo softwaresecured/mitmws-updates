@@ -1,6 +1,5 @@
 # WsProxy Updates
-This repo is a collection of scripts and payloads for the WsProxy pentesting proxy. The updates are signed
-and detiailed in the manifest.txt file that is periodically checked by WsProxy.
+This repository is a collection of scripts and payloads for the WsProxy pentesting proxy.
 
 # Update types:
 - Script variables
