@@ -18,7 +18,7 @@ def getFrameScope():
   return ["TEXT","PING","PONG"]
 
 def getPayloads():
-    return ['*{423257+15454}','#{423257+15454}','{423257+15454}','{{423257+15454}}','`423257+15454`','${423257+15454}','${{423257+15454}}','<%= 423257+15454 %>']
+    return ['*{423257+154541}','#{423257+154541}','{423257+154541}','{{423257+154541}}','`423257+154541`','${423257+154541}','${{423257+154541}}','<%= 423257+154541 %>']
 
 def getTestScope():
   return "APPLICATION"
@@ -28,7 +28,7 @@ def analyze( conversations ):
     for conversation in conversations:
       for websocket_message in conversation:
               # in this case, we just check for the presence of the string "debugtest" as a POC
-              if "438711" in websocket_message.getFrame().getPayloadString():
+              if "577798" in websocket_message.getFrame().getPayloadString():
                   anomaly = DetectedAnomaly(1002, "HIGH", "Regex match", "CWE-1336", "Potential template evaluation","Improper Neutralization of Special Elements Used in a Template Engine")
                   anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
                   anomaly.setConversationUuid(websocket_message.getFrame().getConversationUUID())
