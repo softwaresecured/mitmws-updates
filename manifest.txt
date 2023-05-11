@@ -1,6 +1,6 @@
 ZlNfAykJhsUocD8rEDwZw5CNtTeiCyhJySemidrfIGo4Mv1i7//ZELd3coHHZP/WUojzDuKFax6SeGmJ56aiXESa2YtYrW47ojlTXB2U7SE+uiuso3E9hRUmpurxzavM+wkoEhZwEfot94krJTKSt9yysC/nYIArAK9tk3AyqvGRJBkCBpV40st0zBjAPX+8IM7dXYyDRBcd4PGCXo+/FGo4qzISuwBKll6U5c/F7w9pijfs5XIvM9NteQU69sA4mI8BkLC/pDQYakPbWK+822REA8WRPQ1GSAlYwJl6MXkJCjJwqaSoiOx+FdhdWW7+ioSDOjr7S8o5vjX9xArq5w==
 # WsProxy Update Manifest
-scripts/rules/active/10.jy,m3bv3Evp9503Vpi7CdKhMtrh4NLtdfQMtmRlNNnCqWV0=
+scripts/rules/active/10.jy,m3bv3Evp9503Vpi7CdKhMtrh4NLtdQMtmRlNNnCqWV0=
 scripts/rules/active/13.jy,r4AB64LoEwMMYEVCrc+ixtGrAgBxmyJbQxHL63wdOqY=
 scripts/rules/active/6.jy,oXgyoAS1yepG5qdItMlR2Fv1BF1+FIQxdywcxNKZ+pY=
 scripts/rules/active/2.jy,k2XdPxRSVjIQwIRkWrTpv4o4bs0jBLeD8pjD0/B4jVY=
