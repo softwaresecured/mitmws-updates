@@ -1,6 +1,7 @@
 # Example passive rule ( for testing )
 from com.wsproxy.anomalydetection import DetectedAnomaly
 from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
 from java.util import ArrayList
 
 # The rule name that will be displayed in the GUI
@@ -37,4 +38,6 @@ def analyze( websocket_messages ):
 # In the future this will be ran prior to testing to validate that the rule works properly
 # does nothing right now
 def selfTest():
-    return True
+    result = DetectionRuleSelfTestStatus()
+    result.setSelfTestOK(True)
+    return result

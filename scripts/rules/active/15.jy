@@ -1,4 +1,5 @@
 from com.wsproxy.mvc.model import InteractShTestPayload
+from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
 from com.wsproxy.anomalydetection import DetectedAnomaly
 from java.util import ArrayList
 
@@ -41,4 +42,6 @@ def analyze( websocket_messages ):
     return anomalies
 
 def selfTest():
-    return True
+    result = DetectionRuleSelfTestStatus()
+    result.setSelfTestOK(True)
+    return result

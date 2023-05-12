@@ -3,6 +3,7 @@ from com.wsproxy.anomalydetection import DetectedAnomaly
 from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
 from com.wsproxy.tester import RawWebsocketFrame
 from java.util import ArrayList
+from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
 
 def getName():
     return "Websocket-Protocol: Fuzz frame (light - 10%)"
@@ -42,4 +43,30 @@ def getFuzzRatio():
     return 0.1
 
 def selfTest():
-    return True
+    result = DetectionRuleSelfTestStatus()
+    result.setSelfTestOK(True)
+
+    try:
+        output = ScriptUtil.runCommand(["which", "sh"])
+    except:
+        result.setSelfTestOK(False)
+        result.addSelfTestError("No shell available ( could not find \"sh\"")
+
+    try:
+        output = ScriptUtil.runCommand(["xxd","-version"])
+        if not JythonScriptUtil.regexMatches("^xxd.*Juergen.*",output):
+            result.setSelfTestOK(False)
+            result.addSelfTestError("xxd version unsupported")
+    except:
+        result.setSelfTestOK(False)
+        result.addSelfTestError("Could not find xxd")
+
+    try:
+        output = ScriptUtil.runCommand(["zzuf","--version"])
+        if not JythonScriptUtil.regexMatches("^zzuf.*hocevar.*",output):
+            result.setSelfTestOK(False)
+            result.addSelfTestError("zzuf version not supported")
+    except:
+        result.setSelfTestOK(False)
+        result.addSelfTestError("Could not find zzuf")
+    return result

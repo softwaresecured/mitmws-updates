@@ -1,8 +1,7 @@
-# Command injection ( linux )
-# Command injection ( linux )
 from com.wsproxy.anomalydetection import DetectedAnomaly
 from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
 from java.util import ArrayList
+from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
 
 def getName():
     return "Command injection ( linux ) tests"
@@ -38,4 +37,6 @@ def analyze( conversations ):
     return anomalies
 
 def selfTest():
-    return True
+    result = DetectionRuleSelfTestStatus()
+    result.setSelfTestOK(True)
+    return result
