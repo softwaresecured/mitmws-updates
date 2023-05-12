@@ -1,5 +1,6 @@
 from com.wsproxy.anomalydetection import DetectedAnomaly
 from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
 from java.util import ArrayList
 
 def getName():
@@ -30,4 +31,6 @@ def analyze( websocket_messages ):
     return anomalies
 
 def selfTest():
-    return True
+    result = DetectionRuleSelfTestStatus()
+    result.setSelfTestOK(True)
+    return result

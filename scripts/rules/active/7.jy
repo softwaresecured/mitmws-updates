@@ -1,8 +1,7 @@
-# SQL Injection
-# SQL Injection
 from com.wsproxy.anomalydetection import DetectedAnomaly
 from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
 from java.util import ArrayList
+from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
 
 def getName():
     return "SQL Injection tests ( database error patterns )"
@@ -39,4 +38,6 @@ def analyze( conversations ):
 
 
 def selfTest():
-    return True
+    result = DetectionRuleSelfTestStatus()
+    result.setSelfTestOK(True)
+    return result
