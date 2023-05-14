@@ -37,4 +37,6 @@ def analyze( conversations ):
     return anomalies
 
 def selfTest():
-    return True
+    result = DetectionRuleSelfTestStatus()
+    result.setSelfTestOK(True)
+    return result
