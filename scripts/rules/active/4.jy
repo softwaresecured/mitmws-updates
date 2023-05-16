@@ -28,7 +28,6 @@ def analyze( conversations ):
     anomalies = ArrayList()
     for conversation in conversations:
       for websocket_message in conversation:
-              # in this case, we just check for the presence of the string "debugtest" as a POC
               if bool(websocket_message.getFrame().payloadMatchesRegex(".*(root|daemon|bin|sys|sync|games|man|lp|mail|news).*(bin|bash|nologin|ksh).*")):
                   anomaly = DetectedAnomaly(1004, "HIGH", "Regex match", "CWE-22", "Path traversal", "Improper Limitation of a Pathname to a Restricted Directory")
                   anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())

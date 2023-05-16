@@ -4,16 +4,16 @@ from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
 from java.util import ArrayList
 
 def getName():
-    return "Private IP address in message"
+    return "Google storage bucket detected"
 
 def getActiveRuleType():
     return "PAYLOAD"
-
+    
 def getCategory():
     return "Infrastructure"
 
 def getDescription():
-    return "A private IPv4 address was detected in the message content"
+    return "Detects google storage bucket urls"
 
 def getFrameScope():
   return ["TEXT","PING","PONG"]
@@ -24,8 +24,8 @@ def getTestScope():
 def analyze( websocket_messages ):
     anomalies = ArrayList()
     for websocket_message in websocket_messages:
-        if bool(websocket_message.getFrame().payloadMatchesRegex(".*(192\.168\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5]))|(172\.([1][6-9]|[2][0-9]|[3][0-1])\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5]))|(10\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])\.([0-9]|[0-9][0-9]|[0-2][0-5][0-5])).*")):
-            anomaly = DetectedAnomaly(1008, "HIGH", "Regex match", "CWE-212", "Private IP address detected","Improper Removal of Sensitive Information Before Storage or Transfer")
+        if bool(websocket_message.getFrame().payloadMatchesRegex("(?i).*storage\.googleapis\.com\/(storage|upload|batch|download).*")):
+            anomaly = DetectedAnomaly(1009, "INFO", "Regex match", "CWE-000", "Amazon S3 bucket detected")
             anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
             anomalies.add(anomaly)
     return anomalies

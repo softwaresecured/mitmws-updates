@@ -25,7 +25,6 @@ def getTestScope():
 
 def getPayloadMutationBySeed( payload, seed, ratio ):
     output = ScriptUtil.runCommand(["sh","-c","echo -n {}| xxd -r -p | zzuf -s {} -r {} | xxd -p | tr -d '\n'".format(payload,str(seed),str(ratio))])
-    print("{}@{} in:\n{}\nout:\n{}".format(seed,ratio,payload,output))
     return output
   
 def analyze( websocket_messages ):

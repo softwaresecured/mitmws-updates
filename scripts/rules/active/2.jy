@@ -28,7 +28,6 @@ def analyze( conversations ):
     anomalies = ArrayList()
     for conversation in conversations:
       for websocket_message in conversation:
-              # in this case, we just check for the presence of the string "debugtest" as a POC
               if "577798" in websocket_message.getFrame().getPayloadString():
                   anomaly = DetectedAnomaly(1002, "HIGH", "Regex match", "CWE-1336", "Potential template evaluation","Improper Neutralization of Special Elements Used in a Template Engine")
                   anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
