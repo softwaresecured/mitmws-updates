@@ -1,6 +1,6 @@
-# WsProxy Updates
-This repository is a collection of updates for Wsproxy's payloads and detection rules. Supplemental scripts are provided
-for upgrade scripts, event scripts, variables and http handlers but they're currently not automatically installed.
+# MITMWS Updates
+This repository is a collection of updates for mitm-ws's payloads and detection rules. Supplemental scripts are provided
+for upgrade scripts, event scripts, variables and HTTP handlers but they're currently not automatically installed.
 
 # Update types
 - DAST rules ( passive / active )
