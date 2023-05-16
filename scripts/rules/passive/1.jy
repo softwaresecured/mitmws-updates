@@ -1,7 +1,7 @@
 # Example passive rule ( for testing )
-from com.wsproxy.anomalydetection import DetectedAnomaly
-from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
-from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
+from com.mitmws.anomalydetection import DetectedAnomaly
+from com.mitmws.httpproxy.trafficlogger import WebsocketTrafficRecord
+from com.mitmws.anomalydetection import DetectionRuleSelfTestStatus
 from java.util import ArrayList
 
 # The rule name that will be displayed in the GUI

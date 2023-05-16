@@ -1,5 +1,5 @@
-from com.wsproxy.httpserver import CustomHttpResponse
-from com.wsproxy.httpserver import CustomWebsocketFrame
+from com.mitmws.httpserver import CustomHttpResponse
+from com.mitmws.httpserver import CustomWebsocketFrame
 def getPath():
     return "hellowebsocket"
 def onHttpRequest( method, path, requestHeaders, body ):

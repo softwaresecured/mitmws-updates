@@ -1,21 +1,21 @@
-qDalb61bReT00LJCEmHA+9S+G/2Z9Mv6yjVnV5qIH856jHilVuo+VUCxwSxwG0sbw5Gfk6XOtO/Aazzx/l8e5iIxrbR9+5wQOeeW+x/AaoWQGeLuvAt83LGsdHOTQGE5ZeuUhC6YAuDnkZK3GQ4xBiGajPO4EiPpQSFItjH4VTPH9wCyzfcFdkZENpo7H3cHnD8uaX8qOFMEWHeAIJQ+2dwg5/MauLANlyS2fandq8sy0H8ujEITiY+MLz98ievGtf2LRRTDzPe6c4+ulJS6mY5bmr6iRInOgdyeYGvyNM8/HW3SFkGFJUliPLh8s8MU6boQzbk9aFawa3EPzvpsFQ==
-# WsProxy Update Manifest
-scripts/rules/active/10.jy,+QjKTiE/TqZNnt7fLhh4G1xRs1PcPDNEGPI4ZfcWIhk=
-scripts/rules/active/13.jy,BjfhKp83zQjf9QHXcdlPLKF2iKNkuerl+CTE7SmPWmA=
-scripts/rules/active/6.jy,UXKluXeFt825EXUDxW3M/YZqZEL/riLltsHDfaDtAdA=
-scripts/rules/active/2.jy,LIv+D31Yj3tn3NcpndcMvD+sgyXzg+fW1JNI5t5tbWs=
-scripts/rules/active/7.jy,/28X6SS+b///Wu0OVjHbSo99gVGKEVXhtQ5BG1BT+zA=
-scripts/rules/active/11.jy,e6ftwYYnYBTGa8X7BpOZE1gIleVXrx7JoSxstigxuKg=
-scripts/rules/active/5.jy,QIDEu+lIxvT4/JszCCP+MrlkHsgdwMZtkFoZHMLUjHc=
-scripts/rules/active/12.jy,lNw0tu3X5gtuSBrmL0cEaqpRBy6LJOz//Dx88EddGUM=
-scripts/rules/active/4.jy,17yY4nzCUlCxNGsCTczxmfAQKsNT5dTDRkYcaV/L8Oo=
-scripts/rules/active/3.jy,Y/CnZDgBAi6vFH/aiCY/fPV1hihoZ5VXbJsRSIQpmj4=
+No/ukIJh8KFCyXG7Tl3YhpN9ydmEU7rt7TEYdJEMWZbw5jmbyRmG24HfodznbnaNkB3PUAvjv8rWF5ynlNnnH8seoZVN1uXQcxyrKbDc4+4EQoEnFXODLiqPOOM85uYDE6BUACyGcHX0oeb2D9cfK/IrikjH65BpvoJKv+lT+orM2BAI3fDlS/fePT1KaflSNqqFJtsbDcybewa6EmoSVgrta0IwtuYpOps/5jZl3nTZNLuAEqCBvmR7t0Jl/fKKDPgiR+RjWl3PhMU7kZEPrvF6Bq+OFJkFXqND7zNqg9YMFLlCfbJTbYdWvDzJmS2KvIlf+B0/CW3IYMFq1beCgA==
+# MitmWs Update Manifest
+scripts/rules/active/10.jy,vTEdL2ZSXt+/n6zeD0U3rNKNk9TG3AqTmiPuH5L7tqQ=
+scripts/rules/active/13.jy,1oY76yNWajVs6/A/QB8UOCHtl0EMkTFlmDffptSOBHM=
+scripts/rules/active/6.jy,R68h62Mmwzvv8q4TnyOShJZio659NYAx7n/33qyUpEA=
+scripts/rules/active/2.jy,wUR29oO6NIZ9j+jTFvm9YXx9CtKjPQ6u2yVWZoWXYKo=
+scripts/rules/active/7.jy,MyC3fztxPQbzjC7TFYlIUh60Goa5SkGz64hmZi8xGfc=
+scripts/rules/active/11.jy,6xqhXEvq+1JqQZOAYT6DQquVYQrLgZegGKTcMaEhO9o=
+scripts/rules/active/5.jy,/hSUaJFa7ytxBtPE08xF7U2izAdHalb3kMZ7Oc2T5XM=
+scripts/rules/active/12.jy,4FUSS2K7KIMSSne4lNmB8kJBoIMQwTANPngsLam7a60=
+scripts/rules/active/4.jy,IIECFllRdqAQCvY0rr9wyZ0ZqdjZ8WckjM+fJX21Tv4=
+scripts/rules/active/3.jy,Nlr0POMFzpxR14isw7N7M5enRpV9kP31lRVVGw0Y/cw=
 scripts/rules/active/14.jy,5WaJaA1Usc1z5noZIs1FMRDmnGIu0hrrotOSTXLFzQI=
 scripts/rules/active/15.jy,az5ZZ+8ENRufL5VXowZ3YJWSFdShglswFXIMmz3jHlE=
-scripts/rules/passive/9.jy,2BC0mG668WXP6W2iAKCv2bYNZVPBvxU1lLH4fyBHSLc=
-scripts/rules/passive/1.jy,XX8Fl+sgJGJZ2XQC+u98MQPS+mVY2jKMJBo+tYt0qs4=
-scripts/rules/passive/8.jy,AHwSwYSoSVIlObOxlauS9U+/jjK3iAyKAZqanR4sq9s=
-scripts/rules/passive/16.jy,ule94K5wJmgfRGlrMq+AlmMVtSE9ZKRBoFpnrZVyGXo=
+scripts/rules/passive/9.jy,FJIEhxnriQX0VKpaZ6jIF1za/a6wVeKBU00BhuAoD0g=
+scripts/rules/passive/1.jy,BAuqQgJcMJc4Ipt3qBWChRN+1YpzEkK4qZUJ4Q7dv9Y=
+scripts/rules/passive/8.jy,lfnxJVd6teKOPIOaWplkW+B8OF1coIWdql//ceADOEg=
+scripts/rules/passive/16.jy,BwOp4PsSoP2mC/PKiTVYe5S/q38IMpdgDBBXDpv1th4=
 payloads/xss.payloads,6cUh16ge9wuG1rdB7jQq4Zg89jV2hQ6LGSAaejX3nOQ=
 payloads/sqli.payloads,/gHocn4OZDaryxP8BSfkC6rKvMGg7K548Q1lYenUS10=
 payloads/cmdi.payloads,+wC4Qpay05nY7EZpkbrBSl2S3lX9jjzW/+TAHsZHW+E=
