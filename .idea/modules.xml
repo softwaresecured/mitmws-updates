@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/wsproxy-updates.iml" filepath="$PROJECT_DIR$/.idea/wsproxy-updates.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/mitmws-updates.iml" filepath="$PROJECT_DIR$/.idea/mitmws-updates.iml" />
     </modules>
   </component>
 </project>
