@@ -1,9 +1,9 @@
-from com.wsproxy.util import ScriptUtil
-from com.wsproxy.anomalydetection import DetectedAnomaly
-from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
-from com.wsproxy.tester import RawWebsocketFrame
+from com.mitmws.util import ScriptUtil
+from com.mitmws.anomalydetection import DetectedAnomaly
+from com.mitmws.httpproxy.trafficlogger import WebsocketTrafficRecord
+from com.mitmws.tester import RawWebsocketFrame
 from java.util import ArrayList
-from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
+from com.mitmws.anomalydetection import DetectionRuleSelfTestStatus
 
 def getName():
     return "Websocket-Protocol: Fuzz frame (light - 10%)"

@@ -1,7 +1,7 @@
-from com.wsproxy.anomalydetection import DetectedAnomaly
-from com.wsproxy.httpproxy.trafficlogger import WebsocketTrafficRecord
+from com.mitmws.anomalydetection import DetectedAnomaly
+from com.mitmws.httpproxy.trafficlogger import WebsocketTrafficRecord
 from java.util import ArrayList
-from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
+from com.mitmws.anomalydetection import DetectionRuleSelfTestStatus
 
 def getName():
     return "Template injection tests"
