@@ -28,14 +28,12 @@ def analyze( conversations ):
     anomalies = ArrayList()
     for conversation in conversations:
       for websocket_message in conversation:
-              # in this case, we just check for the presence of the string "debugtest" as a POC
               if websocket_message.getFrame().payloadMatchesRegex("(?i).*(mariadb|mysql).*at line \d+.*"):
                   anomaly = DetectedAnomaly(1007, "MED", "Regex match", "CWE-209", "Database error pattern found", "Generation of Error Message Containing Sensitive Information")
                   anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
                   anomaly.setConversationUuid(websocket_message.getFrame().getConversationUUID())
                   anomalies.add(anomaly)
     return anomalies
-
 
 def selfTest():
     result = DetectionRuleSelfTestStatus()
