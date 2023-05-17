@@ -7,7 +7,7 @@ def onHttpRequest( method, path, requestHeaders, body ):
 <!DOCTYPE html>
 <html>
     <head>
-        <title>WsProxy Test Page</title>
+        <title>MitmWs Test Page</title>
     </head>
     <body>
         <style>
@@ -23,7 +23,7 @@ def onHttpRequest( method, path, requestHeaders, body ):
             }
         </style>
         <div class="main">
-            <center><h1>WsProxy Echo Server</h1></center>
+            <center><h1>MitmWs Echo Server</h1></center>
             <div>
             <p>Send a message to the server:</p>
             <p><textarea rows="10" id="msgContent"></textarea>

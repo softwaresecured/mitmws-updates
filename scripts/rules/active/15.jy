@@ -1,6 +1,6 @@
-from com.wsproxy.mvc.model import InteractShTestPayload
-from com.wsproxy.anomalydetection import DetectionRuleSelfTestStatus
-from com.wsproxy.anomalydetection import DetectedAnomaly
+from com.mitmws.mvc.model import InteractShTestPayload
+from com.mitmws.anomalydetection import DetectionRuleSelfTestStatus
+from com.mitmws.anomalydetection import DetectedAnomaly
 from java.util import ArrayList
 
 def getName():

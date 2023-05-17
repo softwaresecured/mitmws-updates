@@ -16,7 +16,12 @@ def getCategory():
     return "Remote file include"
 
 def getPayloads():
-    return ['http://example.com','https://example.com']
+    return [
+    'example.com',
+    '//example.com',
+    'http://example.com',
+    'https://example.com'
+    ]
 
 def getFrameScope():
   return ["TEXT","PING","PONG"]
