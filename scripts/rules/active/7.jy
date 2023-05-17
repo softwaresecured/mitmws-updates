@@ -16,7 +16,21 @@ def getDescription():
     return "SQL Injection tests ( database error patterns )"
 
 def getPayloads():
-    return ["'",'%','"','1','A','(',')','99999999999999999999','-1','1.1','%','\n','\t']
+    return [
+      "'",
+      '%',
+      '"',
+      '1',
+      'A',
+      '(',
+      ')',
+      '99999999999999999999',
+      '-1',
+      '1.1',
+      '%',
+      '\n',
+      '\t'
+      ]
 
 def getFrameScope():
   return ["TEXT","PING","PONG"]
@@ -28,7 +42,7 @@ def analyze( conversations ):
     anomalies = ArrayList()
     for conversation in conversations:
       for websocket_message in conversation:
-              if websocket_message.getFrame().payloadMatchesRegex("(?i).*(mariadb|mysql).*at line \d+.*"):
+              if websocket_message.getFrame().payloadMatchesRegex("(?i).*(mariadb|mysql).*at line.*"):
                   anomaly = DetectedAnomaly(1007, "MED", "Regex match", "CWE-209", "Database error pattern found", "Generation of Error Message Containing Sensitive Information")
                   anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
                   anomaly.setConversationUuid(websocket_message.getFrame().getConversationUUID())

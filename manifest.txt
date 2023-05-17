@@ -1,17 +1,19 @@
-No/ukIJh8KFCyXG7Tl3YhpN9ydmEU7rt7TEYdJEMWZbw5jmbyRmG24HfodznbnaNkB3PUAvjv8rWF5ynlNnnH8seoZVN1uXQcxyrKbDc4+4EQoEnFXODLiqPOOM85uYDE6BUACyGcHX0oeb2D9cfK/IrikjH65BpvoJKv+lT+orM2BAI3fDlS/fePT1KaflSNqqFJtsbDcybewa6EmoSVgrta0IwtuYpOps/5jZl3nTZNLuAEqCBvmR7t0Jl/fKKDPgiR+RjWl3PhMU7kZEPrvF6Bq+OFJkFXqND7zNqg9YMFLlCfbJTbYdWvDzJmS2KvIlf+B0/CW3IYMFq1beCgA==
+heyjyx/OL0VaGJbE5EcMzXcb+VbBf1gWXOhYq0y0QEG7sYqB9p950BkiPstly89WzjdXJDJlnW+4Mkv2C4M1ox+ObTX5C3AcJQUUs2mCRrN5vxoIKGZhlEO0xT41GTnmNNs3v7WRazJ2FB9bATa0HvxyJNpbE5fM9MtVz06lyylFe2sfs4VfC8TQCa4PHLxEflLuSbtoUIix+bN4rLAEiBdKVzEZpWZzKN0c7XNrU4xBgBiA86XC65qWenTJGCQZt+Dp0h9phWfDRUEbx9wd4bwyQx3xiqFNzGu+6BuREBhGMqLkLyT1qN39rvwEb/3zssYF9V469mHbsnRxGQ4n0w==
 # MitmWs Update Manifest
 scripts/rules/active/10.jy,vTEdL2ZSXt+/n6zeD0U3rNKNk9TG3AqTmiPuH5L7tqQ=
 scripts/rules/active/13.jy,1oY76yNWajVs6/A/QB8UOCHtl0EMkTFlmDffptSOBHM=
-scripts/rules/active/6.jy,R68h62Mmwzvv8q4TnyOShJZio659NYAx7n/33qyUpEA=
-scripts/rules/active/2.jy,wUR29oO6NIZ9j+jTFvm9YXx9CtKjPQ6u2yVWZoWXYKo=
-scripts/rules/active/7.jy,MyC3fztxPQbzjC7TFYlIUh60Goa5SkGz64hmZi8xGfc=
+scripts/rules/active/6.jy,PnNKpUbNglzn6FB4/voCJLWQxsq7GU5bVxpyVfqCwk0=
+scripts/rules/active/2.jy,7xtKjP44hlNewB879EGsB6Nx5entkZhoGSwika7r8hE=
+scripts/rules/active/7.jy,2YXrf9nuE4909nJ9NdrP95p4p86CDTib6hXVdfK84KU=
 scripts/rules/active/11.jy,6xqhXEvq+1JqQZOAYT6DQquVYQrLgZegGKTcMaEhO9o=
-scripts/rules/active/5.jy,/hSUaJFa7ytxBtPE08xF7U2izAdHalb3kMZ7Oc2T5XM=
+scripts/rules/active/17.jy,9jqd+2u0rg6qleprwGCXnU2Ri1BmLY+pjDEp2+IdOmA=
+scripts/rules/active/18.jy,5iRmnvqBdT0Wt49Rk1S52nvBfc1V0gGr0tkqSQ1o3Po=
+scripts/rules/active/5.jy,beoUm7/qgYPokyE/rcLUBn8+MVVm436D8z7xXnTjIXA=
 scripts/rules/active/12.jy,4FUSS2K7KIMSSne4lNmB8kJBoIMQwTANPngsLam7a60=
-scripts/rules/active/4.jy,IIECFllRdqAQCvY0rr9wyZ0ZqdjZ8WckjM+fJX21Tv4=
+scripts/rules/active/4.jy,TOjsjRctmyd8VmBb2Y0C0NzokB+lDbJI3/+MRDeyo+0=
 scripts/rules/active/3.jy,Nlr0POMFzpxR14isw7N7M5enRpV9kP31lRVVGw0Y/cw=
-scripts/rules/active/14.jy,5WaJaA1Usc1z5noZIs1FMRDmnGIu0hrrotOSTXLFzQI=
-scripts/rules/active/15.jy,az5ZZ+8ENRufL5VXowZ3YJWSFdShglswFXIMmz3jHlE=
+scripts/rules/active/14.jy,Ojfv54EuANpZEKgNzUNwYDAjner5ygC4+uWhflncStk=
+scripts/rules/active/15.jy,VqS6sN4e1iB4+TYfueHTD+ewFdDQ1AgGB1IxZN0lUrU=
 scripts/rules/passive/9.jy,FJIEhxnriQX0VKpaZ6jIF1za/a6wVeKBU00BhuAoD0g=
 scripts/rules/passive/1.jy,BAuqQgJcMJc4Ipt3qBWChRN+1YpzEkK4qZUJ4Q7dv9Y=
 scripts/rules/passive/8.jy,lfnxJVd6teKOPIOaWplkW+B8OF1coIWdql//ceADOEg=

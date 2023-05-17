@@ -16,7 +16,13 @@ def getDescription():
     return "Command injection ( linux )"
 
 def getPayloads():
-    return ['`id`','|id|','$(id)']
+    return [
+      '`id`',
+      '|id',
+      '$(id)',
+      ';id',
+      '&& id'
+      ]
 
 def getFrameScope():
   return ["TEXT","PING","PONG"]
