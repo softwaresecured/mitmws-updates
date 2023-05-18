@@ -64,7 +64,7 @@ def selfTest():
         result.addSelfTestError("No shell available ( could not find \"sh\"")
 
     try:
-        output = ScriptUtil.runCommand(["xxd","-version"])
+        output = ScriptUtil.runCommand(["sh", "-c", "xxd -version 2>&1"])
         if not JythonScriptUtil.regexMatches("^xxd.*Juergen.*",output):
             result.setSelfTestOK(False)
             result.addSelfTestError("xxd version unsupported")
