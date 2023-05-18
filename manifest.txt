@@ -1,15 +1,15 @@
-ehqlEyOkOmt0cx30JSxBjuHdrnynuwU/cu/PPVPgTyyx69k4sb53KHTeuYGdJ2L4AZsQuBGat+7psgFeWzCzWImkDGHKe9RvG2jNzd/jZ+BlIWzddKffvSNcFHTVZDuEb4SIrmPSlTrkN2j6MkZpbTqVOk6X8KBzgWHEIaP7C7lBZmw/Pa9ZFLzoW7QFrti1zr3THIfq0aU806urzxh3L3/xrIA4CCfmrf05n+PJFg49jcBcIdrTChKFRfdQeI+nEUx3+M5FBbenrYM99teqYffxTJi+OUOb+deO0KIfvsqwPLSWqXDmVyy0PHOgPLzL1ldVagOTahePpEDysbWNdw==
+iDEmkHHvhV7eOYEpD24dDJERedFgfnw6D4l9XLO8n/8IbftnCiZd0IKkSnHV6R1TWw0SssWvNxpRSkeoIuRI+oYM7IzqhFyeSdjci9VGgRJM0PMwojjbncgy13CGE9pEdQvumwF5gTtBpF57hYVzK37Ax4tcjHLtTpKZP65wAMohtqUdi6oQpd/sWCSXV/0mDOWBCrHa9OKlXuW1oQfCu1Yn2oIltpEXfxoweuSzlPcT7wmPKRMk3k/QKwGgHsXZwphSUzmN4TUjXurrD+6gBg6nsZuS7/TQixNLvgtr7v5noqtHUl3eZiqzzwcIGSo+ZYCg67xHfV8cla5gx1/r3Q==
 # MitmWs Update Manifest
 scripts/rules/active/10.jy,vTEdL2ZSXt+/n6zeD0U3rNKNk9TG3AqTmiPuH5L7tqQ=
-scripts/rules/active/13.jy,2+cAuEtiFJVPfS1ob31PuS9mfOQFfPW7OHFiOP2Ci0M=
+scripts/rules/active/13.jy,dhwUUnH1o+7zqmCypiCdnvF2/Jd9EFQ40KDz6ZEgTPc=
 scripts/rules/active/6.jy,PnNKpUbNglzn6FB4/voCJLWQxsq7GU5bVxpyVfqCwk0=
 scripts/rules/active/2.jy,7xtKjP44hlNewB879EGsB6Nx5entkZhoGSwika7r8hE=
 scripts/rules/active/7.jy,2YXrf9nuE4909nJ9NdrP95p4p86CDTib6hXVdfK84KU=
-scripts/rules/active/11.jy,llxPvS2lbu4MOTsZ3ImrAtuptkAf5SUMEgM3jn36GLI=
+scripts/rules/active/11.jy,hpkpPYTtpSAn+VZ9gK83MRQuMbcELBLN3tO6ED0CqKA=
 scripts/rules/active/17.jy,9jqd+2u0rg6qleprwGCXnU2Ri1BmLY+pjDEp2+IdOmA=
 scripts/rules/active/18.jy,5iRmnvqBdT0Wt49Rk1S52nvBfc1V0gGr0tkqSQ1o3Po=
 scripts/rules/active/5.jy,0KmiZZi2dh4fBxqdni473DWG/6FVTBEIP7lRhwKMN+8=
-scripts/rules/active/12.jy,NPugm/eXO17YRSRb0hhdATt1PP6k7QpG//0qCXknxaI=
+scripts/rules/active/12.jy,Odfh00zyj14VEfhwP67wtIeZhK5dmKWED6HhmK4vE+w=
 scripts/rules/active/4.jy,TOjsjRctmyd8VmBb2Y0C0NzokB+lDbJI3/+MRDeyo+0=
 scripts/rules/active/3.jy,Nlr0POMFzpxR14isw7N7M5enRpV9kP31lRVVGw0Y/cw=
 scripts/rules/active/14.jy,Ojfv54EuANpZEKgNzUNwYDAjner5ygC4+uWhflncStk=
