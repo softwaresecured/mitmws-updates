@@ -25,4 +25,10 @@ for updates.
 3. Set the `updates.public_key` property to the contents of the [updatesite.public](https://github.com/softwaresecured/mitmws-updates/blob/main/updatesite.public) file
 4. Click Apply
 
+# Required libraries / programs
 
+Some rules require additional programs to function. Below is a list of programs required by rules within this update
+repository.
+
+- [zzuf](https://github.com/samhocevar/zzuf)
+- [xxd](https://linux.die.net/man/1/xxd)
