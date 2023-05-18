@@ -40,7 +40,6 @@ def getFrameMutationBySeed( payload, seed, ratio, payloadLength ):
 def analyze( websocket_messages ):
     anomalies = ArrayList()
     for websocket_message in websocket_messages:
-        # in this case, we just check for the presence of the string "debugtest" as a POC
         if websocket_message.getFrame().payloadMatchesRegex(".*Ratchet detected.*"):
             anomaly = DetectedAnomaly(1001, "INFO", "Regex match", "CWE 209", "Information Exposure Through an Error Message","An inbound websocket frame contained a message matching the pattern for a Ratchet websocket server error message.")
             anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())

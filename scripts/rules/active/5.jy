@@ -33,7 +33,6 @@ def analyze( conversations ):
     anomalies = ArrayList()
     for conversation in conversations:
       for websocket_message in conversation:
-              # in this case, we just check for the presence of the string "debugtest" as a POC
               if bool(websocket_message.getFrame().payloadMatchesRegex("(?i).*<h1>example domain</h1>.*")):
                   anomaly = DetectedAnomaly(1005, "HIGH", "Regex match", "CWE-98", "Remote file include", "Improper Control of Filename for Include/Require Statement")
                   anomaly.setWebsocketMsgId(websocket_message.getFrame().getMessageUUID())
