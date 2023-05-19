@@ -19,7 +19,7 @@ def getFrameScope():
   return ["TEXT","PING","PONG","CLOSE","BINARY","CONTINUATION"]
 
 def getTestScope():
-  return "PRESENTATION-WS"
+  return "APPLICATION"
 
 def getOOBPayloads( interactsh ):
     payloads = []
